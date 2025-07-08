@@ -5,6 +5,9 @@ using System.Net.Sockets;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
+using Biblioteka;
 
 
 namespace Server
@@ -33,13 +36,14 @@ namespace Server
                 {
                     int brBajtaUDP = serverSocketUDP.ReceiveFrom(prijemniBafer, ref posiljaocEP);
                     string porukaUDP = Encoding.UTF8.GetString(prijemniBafer, 0, brBajtaUDP);
-                    string[] podaci = porukaUDP.Split(";");
+                    string[] podaci = porukaUDP.Split(';');
                     int brAp = int.Parse(podaci[0]);
                     string odgovorGostu = "";
                     if (brAp < 10)
                     {
                         odgovorGostu = "Rezervacija primljena";
-                    }else
+                    }
+                    else
                     {
                         odgovorGostu = "Rezervacija odbijena";
                     }

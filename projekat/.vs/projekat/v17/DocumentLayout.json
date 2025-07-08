@@ -1,18 +1,30 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Acer\\Desktop\\primena racunarskih mreza u infrastrukturnim sistemima\\projekat\\projekat\\",
+  "WorkspaceRootPath": "C:\\Users\\Acer\\Documents\\GitHub\\prmisProjekat\\projekat\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4BB86E25-75A3-443C-8436-1FCD72AC63BF}|UDPClientGost\\UDPClientGost.csproj|c:\\users\\acer\\desktop\\primena racunarskih mreza u infrastrukturnim sistemima\\projekat\\projekat\\udpclientgost\\udpclientgost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4BB86E25-75A3-443C-8436-1FCD72AC63BF}|UDPClientGost\\UDPClientGost.csproj|solutionrelative:udpclientgost\\udpclientgost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{48745349-AF06-4F01-BC20-90E9BC61BD6F}|Server\\Server.csproj|c:\\users\\acer\\documents\\github\\prmisprojekat\\projekat\\server\\server.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48745349-AF06-4F01-BC20-90E9BC61BD6F}|Server\\Server.csproj|solutionrelative:server\\server.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D76E90E6-F584-4936-9008-409328D98B3B}|TCPClientOsoblje\\TCPClientOsoblje.csproj|c:\\users\\acer\\desktop\\primena racunarskih mreza u infrastrukturnim sistemima\\projekat\\projekat\\tcpclientosoblje\\tcpclientosoblje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D76E90E6-F584-4936-9008-409328D98B3B}|TCPClientOsoblje\\TCPClientOsoblje.csproj|solutionrelative:tcpclientosoblje\\tcpclientosoblje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5E91B3C3-6B70-4EF3-A2DC-48489E3C7B62}|UDPClientGost\\UDPClientGost.csproj|C:\\Users\\Acer\\Documents\\GitHub\\prmisProjekat\\projekat\\udpclientgost\\udpclientgost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E91B3C3-6B70-4EF3-A2DC-48489E3C7B62}|UDPClientGost\\UDPClientGost.csproj|solutionrelative:udpclientgost\\udpclientgost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{86CDC988-6AFC-41A8-AF27-38CACAE6275D}|Server\\Server.csproj|c:\\users\\acer\\desktop\\primena racunarskih mreza u infrastrukturnim sistemima\\projekat\\projekat\\server\\server.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{86CDC988-6AFC-41A8-AF27-38CACAE6275D}|Server\\Server.csproj|solutionrelative:server\\server.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{76B5A125-5506-40B1-93FA-5A3EA1D2A0D2}|Biblioteka\\Biblioteka.csproj|C:\\Users\\Acer\\Documents\\GitHub\\prmisProjekat\\projekat\\biblioteka\\apartman.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76B5A125-5506-40B1-93FA-5A3EA1D2A0D2}|Biblioteka\\Biblioteka.csproj|solutionrelative:biblioteka\\apartman.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76B5A125-5506-40B1-93FA-5A3EA1D2A0D2}|Biblioteka\\Biblioteka.csproj|C:\\Users\\Acer\\Documents\\GitHub\\prmisProjekat\\projekat\\biblioteka\\osoblje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76B5A125-5506-40B1-93FA-5A3EA1D2A0D2}|Biblioteka\\Biblioteka.csproj|solutionrelative:biblioteka\\osoblje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{873F413C-296F-4DE8-ADF4-527363CBC71E}|TCPClientOsoblje\\TCPClientOsoblje.csproj|C:\\Users\\Acer\\Documents\\GitHub\\prmisProjekat\\projekat\\tcpclientosoblje\\tcpclientosoblje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{873F413C-296F-4DE8-ADF4-527363CBC71E}|TCPClientOsoblje\\TCPClientOsoblje.csproj|solutionrelative:tcpclientosoblje\\tcpclientosoblje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76B5A125-5506-40B1-93FA-5A3EA1D2A0D2}|Biblioteka\\Biblioteka.csproj|C:\\Users\\Acer\\Documents\\GitHub\\prmisProjekat\\projekat\\biblioteka\\gost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76B5A125-5506-40B1-93FA-5A3EA1D2A0D2}|Biblioteka\\Biblioteka.csproj|solutionrelative:biblioteka\\gost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,45 +34,79 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "TCPClientOsoblje.cs",
-              "DocumentMoniker": "C:\\Users\\Acer\\Desktop\\primena racunarskih mreza u infrastrukturnim sistemima\\projekat\\projekat\\TCPClientOsoblje\\TCPClientOsoblje.cs",
-              "RelativeDocumentMoniker": "TCPClientOsoblje\\TCPClientOsoblje.cs",
-              "ToolTip": "C:\\Users\\Acer\\Desktop\\primena racunarskih mreza u infrastrukturnim sistemima\\projekat\\projekat\\TCPClientOsoblje\\TCPClientOsoblje.cs",
-              "RelativeToolTip": "TCPClientOsoblje\\TCPClientOsoblje.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAAAQwCcAAAAYAAAA",
+              "DocumentIndex": 5,
+              "Title": "Gost.cs",
+              "DocumentMoniker": "C:\\Users\\Acer\\Documents\\GitHub\\prmisProjekat\\projekat\\Biblioteka\\Gost.cs",
+              "RelativeDocumentMoniker": "Biblioteka\\Gost.cs",
+              "ToolTip": "C:\\Users\\Acer\\Documents\\GitHub\\prmisProjekat\\projekat\\Biblioteka\\Gost.cs",
+              "RelativeToolTip": "Biblioteka\\Gost.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-07T17:29:58.778Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-08T13:27:14.727Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UDPClientGost.cs",
-              "DocumentMoniker": "C:\\Users\\Acer\\Desktop\\primena racunarskih mreza u infrastrukturnim sistemima\\projekat\\projekat\\UDPClientGost\\UDPClientGost.cs",
-              "RelativeDocumentMoniker": "UDPClientGost\\UDPClientGost.cs",
-              "ToolTip": "C:\\Users\\Acer\\Desktop\\primena racunarskih mreza u infrastrukturnim sistemima\\projekat\\projekat\\UDPClientGost\\UDPClientGost.cs",
-              "RelativeToolTip": "UDPClientGost\\UDPClientGost.cs",
-              "ViewState": "AQIAABwAAAAAAAAAAAAQwC0AAABhAAAA",
+              "DocumentIndex": 3,
+              "Title": "Osoblje.cs",
+              "DocumentMoniker": "C:\\Users\\Acer\\Documents\\GitHub\\prmisProjekat\\projekat\\Biblioteka\\Osoblje.cs",
+              "RelativeDocumentMoniker": "Biblioteka\\Osoblje.cs",
+              "ToolTip": "C:\\Users\\Acer\\Documents\\GitHub\\prmisProjekat\\projekat\\Biblioteka\\Osoblje.cs",
+              "RelativeToolTip": "Biblioteka\\Osoblje.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-07T17:28:41.281Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-08T13:27:02.573Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Server.cs",
-              "DocumentMoniker": "C:\\Users\\Acer\\Desktop\\primena racunarskih mreza u infrastrukturnim sistemima\\projekat\\projekat\\Server\\Server.cs",
-              "RelativeDocumentMoniker": "Server\\Server.cs",
-              "ToolTip": "C:\\Users\\Acer\\Desktop\\primena racunarskih mreza u infrastrukturnim sistemima\\projekat\\projekat\\Server\\Server.cs",
-              "RelativeToolTip": "Server\\Server.cs",
-              "ViewState": "AQIAACwAAAAAAAAAAAAQwE0AAAAAAAAA",
+              "Title": "Apartman.cs",
+              "DocumentMoniker": "C:\\Users\\Acer\\Documents\\GitHub\\prmisProjekat\\projekat\\Biblioteka\\Apartman.cs",
+              "RelativeDocumentMoniker": "Biblioteka\\Apartman.cs",
+              "ToolTip": "C:\\Users\\Acer\\Documents\\GitHub\\prmisProjekat\\projekat\\Biblioteka\\Apartman.cs",
+              "RelativeToolTip": "Biblioteka\\Apartman.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAxwBQAAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-07T17:27:21.19Z",
+              "WhenOpened": "2025-07-08T13:26:49.523Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UDPClientGost.cs",
+              "DocumentMoniker": "C:\\Users\\Acer\\Documents\\GitHub\\prmisProjekat\\projekat\\UDPClientGost\\UDPClientGost.cs",
+              "RelativeDocumentMoniker": "UDPClientGost\\UDPClientGost.cs",
+              "ToolTip": "C:\\Users\\Acer\\Documents\\GitHub\\prmisProjekat\\projekat\\UDPClientGost\\UDPClientGost.cs",
+              "RelativeToolTip": "UDPClientGost\\UDPClientGost.cs",
+              "ViewState": "AQIAAFUAAAAAAAAAAAAgwGcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-08T13:23:40.095Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TCPClientOsoblje.cs",
+              "DocumentMoniker": "C:\\Users\\Acer\\Documents\\GitHub\\prmisProjekat\\projekat\\TCPClientOsoblje\\TCPClientOsoblje.cs",
+              "RelativeDocumentMoniker": "TCPClientOsoblje\\TCPClientOsoblje.cs",
+              "ToolTip": "C:\\Users\\Acer\\Documents\\GitHub\\prmisProjekat\\projekat\\TCPClientOsoblje\\TCPClientOsoblje.cs",
+              "RelativeToolTip": "TCPClientOsoblje\\TCPClientOsoblje.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAkwD4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-08T13:23:17.029Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Server.cs",
+              "DocumentMoniker": "C:\\Users\\Acer\\Documents\\GitHub\\prmisProjekat\\projekat\\Server\\Server.cs",
+              "RelativeDocumentMoniker": "Server\\Server.cs",
+              "ToolTip": "C:\\Users\\Acer\\Documents\\GitHub\\prmisProjekat\\projekat\\Server\\Server.cs",
+              "RelativeToolTip": "Server\\Server.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACYAAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-08T13:22:53.613Z",
               "EditorCaption": ""
             }
           ]

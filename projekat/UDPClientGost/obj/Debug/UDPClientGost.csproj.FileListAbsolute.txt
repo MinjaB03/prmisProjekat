@@ -1,0 +1,10 @@
+C:\Users\Acer\Desktop\prmuis\projekat\UDPClientGost\bin\Debug\UDPClientGost.exe.config
+C:\Users\Acer\Desktop\prmuis\projekat\UDPClientGost\bin\Debug\UDPClientGost.exe
+C:\Users\Acer\Desktop\prmuis\projekat\UDPClientGost\bin\Debug\UDPClientGost.pdb
+C:\Users\Acer\Desktop\prmuis\projekat\UDPClientGost\bin\Debug\Biblioteka.dll
+C:\Users\Acer\Desktop\prmuis\projekat\UDPClientGost\bin\Debug\Biblioteka.pdb
+C:\Users\Acer\Desktop\prmuis\projekat\UDPClientGost\obj\Debug\UDPClientGost.csproj.AssemblyReference.cache
+C:\Users\Acer\Desktop\prmuis\projekat\UDPClientGost\obj\Debug\UDPClientGost.csproj.CoreCompileInputs.cache
+C:\Users\Acer\Desktop\prmuis\projekat\UDPClientGost\obj\Debug\UDPClien.69BE9255.Up2Date
+C:\Users\Acer\Desktop\prmuis\projekat\UDPClientGost\obj\Debug\UDPClientGost.exe
+C:\Users\Acer\Desktop\prmuis\projekat\UDPClientGost\obj\Debug\UDPClientGost.pdb

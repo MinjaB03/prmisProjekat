@@ -5,6 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net;
 using System.Net.Sockets;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
+using Biblioteka;
+
 
 
 namespace TCPClientOsoblje
@@ -37,7 +41,7 @@ namespace TCPClientOsoblje
                         Console.WriteLine("Trenutno nema zadataka.");
                         break;
                     }
-                        
+
                     Console.WriteLine($"Dobili ste zadatak: {poruka}");
 
                     Console.WriteLine("Posaljite potvrdu o izvrsenom zadatku.");
@@ -52,7 +56,7 @@ namespace TCPClientOsoblje
             Console.WriteLine("Osoblje zavrsava sa radom");
             clientSocket.Close(); // Zatvaramo soket na kraju rada
             Console.ReadKey();
-        
+
         }
     }
 }
