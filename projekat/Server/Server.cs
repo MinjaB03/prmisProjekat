@@ -27,6 +27,9 @@ namespace Server
 
             Console.WriteLine($"Server je pokrenut.");
 
+            
+            List<Gost> gosti = new List<Gost>();
+            BinaryFormatter formatter = new BinaryFormatter();
             EndPoint posiljaocEP = new IPEndPoint(IPAddress.Any, 0);
 
             while (true)
@@ -47,10 +50,36 @@ namespace Server
                     {
                         odgovorGostu = "Rezervacija odbijena";
                     }
-                    if (porukaUDP == "kraj")
+                    if (porukaUDP == "2")
                         break;
-                    Console.WriteLine($"UDP poruka od {posiljaocEP}: {porukaUDP}");
+                    Console.WriteLine($"Nova poruka od {posiljaocEP}: {porukaUDP}");
+
                     byte[] binarniOdgovor = Encoding.UTF8.GetBytes(odgovorGostu);
+                    serverSocketUDP.SendTo(binarniOdgovor, posiljaocEP);
+
+                    for(int i = 0; i < int.Parse(podaci[1]); i++)
+                    {
+                        brBajtaUDP = serverSocketUDP.ReceiveFrom(prijemniBafer, ref posiljaocEP);
+                        using (MemoryStream ms = new MemoryStream(prijemniBafer, 0, brBajtaUDP))
+                        {
+                            Gost g = (Gost)formatter.Deserialize(ms);
+                            gosti.Add(g);
+                        }
+                    }
+                   
+                    Console.WriteLine("Primljeni gosti: \n");
+                    foreach (Gost g in gosti)
+                    {
+                        Console.WriteLine("Ime:" + g.Ime);
+                        Console.WriteLine("Prezime:" + g.Prezime);
+                        Console.WriteLine("Pol:" + g.Pol);
+                        Console.WriteLine("Datum rodjenja:" + g.DatRodj);
+                        Console.WriteLine("Broj pasosa:" + g.BrPasosa);
+
+                    }
+
+                    odgovorGostu = "Podaci su uspesno primljeni!";
+                    binarniOdgovor = Encoding.UTF8.GetBytes(odgovorGostu);
                     serverSocketUDP.SendTo(binarniOdgovor, posiljaocEP);
 
 

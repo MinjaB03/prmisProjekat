@@ -4,3 +4,9 @@ C:\Users\Acer\Desktop\prmuis\projekat\Biblioteka\obj\Debug\Biblioteka.csproj.Ass
 C:\Users\Acer\Desktop\prmuis\projekat\Biblioteka\obj\Debug\Biblioteka.csproj.CoreCompileInputs.cache
 C:\Users\Acer\Desktop\prmuis\projekat\Biblioteka\obj\Debug\Biblioteka.dll
 C:\Users\Acer\Desktop\prmuis\projekat\Biblioteka\obj\Debug\Biblioteka.pdb
+C:\Users\Acer\Documents\GitHub\prmisProjekat\projekat\Biblioteka\bin\Debug\Biblioteka.dll
+C:\Users\Acer\Documents\GitHub\prmisProjekat\projekat\Biblioteka\bin\Debug\Biblioteka.pdb
+C:\Users\Acer\Documents\GitHub\prmisProjekat\projekat\Biblioteka\obj\Debug\Biblioteka.csproj.AssemblyReference.cache
+C:\Users\Acer\Documents\GitHub\prmisProjekat\projekat\Biblioteka\obj\Debug\Biblioteka.csproj.CoreCompileInputs.cache
+C:\Users\Acer\Documents\GitHub\prmisProjekat\projekat\Biblioteka\obj\Debug\Biblioteka.dll
+C:\Users\Acer\Documents\GitHub\prmisProjekat\projekat\Biblioteka\obj\Debug\Biblioteka.pdb

@@ -20,8 +20,8 @@ namespace UDPClientGost
             IPEndPoint destinationEP = new IPEndPoint(IPAddress.Parse("192.168.1.7"), 15001);
 
             EndPoint posiljaocEP = new IPEndPoint(IPAddress.Any, 0);
-            List<Gost> gosti = new List<Gost>();
-            //BinaryFormatter formatter = new BinaryFormatter();
+           // List<Gost> gosti = new List<Gost>();
+            BinaryFormatter formatter = new BinaryFormatter();
 
             while (true)
             {
@@ -32,22 +32,6 @@ namespace UDPClientGost
                 Console.WriteLine("Odabrali ste POKUSAJ REZERVACIJE");
                 Console.WriteLine("Broj gostiju: ");
                 int brG = int.Parse(Console.ReadLine());
-                /* for(int i = 0; i <  brG; i++) 
-                 {
-                     Gost gost = new Gost();
-                     Console.WriteLine($"Unesite podatke o {i}. gostu: \n");
-                     Console.WriteLine("Ime: ");
-                     gost.Ime = Console.ReadLine();
-                     Console.WriteLine("Prezime: ");
-                     gost.Prezime = Console.ReadLine();
-                     Console.WriteLine("Pol: ");
-                     gost.Pol = Console.ReadLine();
-                     Console.WriteLine("Datum rodjenja: ");
-                     gost.DatRodj = DateTime.Parse(Console.ReadLine());
-                     Console.WriteLine("Broj pasosa: ");
-                     gost.BrPasosa = int.Parse(Console.ReadLine());
-                     gosti.Add(gost);
-                 }*/
                 Console.WriteLine("Broj apartmana: ");
                 int brAp = int.Parse(Console.ReadLine());
                 Console.WriteLine("Broj nocenja: ");
@@ -64,20 +48,7 @@ namespace UDPClientGost
                  Console.WriteLine("");
                  Console.WriteLine("");
                  Console.WriteLine("");*/
-
-
-
                 string rezervacija = brAp + ";" + brG + ";" + brN + ";";
-
-                /* using (MemoryStream ms = new MemoryStream())
-                 {
-                     formatter.Serialize(ms, gosti);
-                     byte[] data = ms.ToArray();
-                     clientSocket.Send(data);
-                 }*/
-
-
-
                 try
                 {
                     byte[] binarnaPoruka = Encoding.UTF8.GetBytes(rezervacija);
@@ -87,8 +58,43 @@ namespace UDPClientGost
 
                     brBajta = clientSocket.ReceiveFrom(prijemniBafer, ref posiljaocEP);
                     string odgovor = Encoding.UTF8.GetString(prijemniBafer, 0, brBajta);
-                    Console.WriteLine($"Stigao je odgovor od {posiljaocEP}, poruka:\n{odgovor}");
+                    Console.WriteLine($"Stigao je odgovor! Poruka:\n{odgovor}");
 
+                    if(odgovor == "Rezervacija primljena")
+                    {
+                        Console.WriteLine("Posaljite podatke o gostima.");
+                        for (int i = 0; i < brG; i++)
+                        {
+                            Gost gost = new Gost();
+                            Console.WriteLine($"Unesite podatke o {i+1}. gostu: \n");
+                            Console.WriteLine("Ime: ");
+                            gost.Ime = Console.ReadLine();
+                            Console.WriteLine("Prezime: ");
+                            gost.Prezime = Console.ReadLine();
+                            Console.WriteLine("Pol (Z ili M): ");
+                            gost.Pol = Console.ReadLine();
+                            Console.WriteLine("Datum rodjenja (format: yyyy-mm-dd): ");
+                            gost.DatRodj = DateTime.Parse(Console.ReadLine());
+                            Console.WriteLine("Broj pasosa: ");
+                            gost.BrPasosa = int.Parse(Console.ReadLine());
+
+                            using (MemoryStream ms = new MemoryStream())
+                            {
+                                formatter.Serialize(ms, gost);
+                                byte[] data = ms.ToArray();
+                                clientSocket.SendTo(data, 0, data.Length, SocketFlags.None, destinationEP);
+                            }
+                        }
+                       
+
+                        brBajta = clientSocket.ReceiveFrom(prijemniBafer, ref posiljaocEP);
+                        string odgovor2 = Encoding.UTF8.GetString(prijemniBafer, 0, brBajta);
+                        Console.WriteLine($"Stigao je odgovor! Poruka:\n{odgovor2}");
+                    }
+                    else
+                    {
+                        break;
+                    }
                 }
                 catch (SocketException ex)
                 {

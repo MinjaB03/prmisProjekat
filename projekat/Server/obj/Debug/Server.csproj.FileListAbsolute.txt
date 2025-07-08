@@ -8,3 +8,13 @@ C:\Users\Acer\Desktop\prmuis\projekat\Server\bin\Debug\Biblioteka.pdb
 C:\Users\Acer\Desktop\prmuis\projekat\Server\obj\Debug\Server.csproj.Up2Date
 C:\Users\Acer\Desktop\prmuis\projekat\Server\obj\Debug\Server.exe
 C:\Users\Acer\Desktop\prmuis\projekat\Server\obj\Debug\Server.pdb
+C:\Users\Acer\Documents\GitHub\prmisProjekat\projekat\Server\bin\Debug\Server.exe.config
+C:\Users\Acer\Documents\GitHub\prmisProjekat\projekat\Server\bin\Debug\Server.exe
+C:\Users\Acer\Documents\GitHub\prmisProjekat\projekat\Server\bin\Debug\Server.pdb
+C:\Users\Acer\Documents\GitHub\prmisProjekat\projekat\Server\bin\Debug\Biblioteka.dll
+C:\Users\Acer\Documents\GitHub\prmisProjekat\projekat\Server\bin\Debug\Biblioteka.pdb
+C:\Users\Acer\Documents\GitHub\prmisProjekat\projekat\Server\obj\Debug\Server.csproj.AssemblyReference.cache
+C:\Users\Acer\Documents\GitHub\prmisProjekat\projekat\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
+C:\Users\Acer\Documents\GitHub\prmisProjekat\projekat\Server\obj\Debug\Server.csproj.Up2Date
+C:\Users\Acer\Documents\GitHub\prmisProjekat\projekat\Server\obj\Debug\Server.exe
+C:\Users\Acer\Documents\GitHub\prmisProjekat\projekat\Server\obj\Debug\Server.pdb
