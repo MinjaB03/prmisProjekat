@@ -8,3 +8,13 @@ C:\Users\Acer\Desktop\prmuis\projekat\TCPClientOsoblje\obj\Debug\TCPClientOsoblj
 C:\Users\Acer\Desktop\prmuis\projekat\TCPClientOsoblje\obj\Debug\TCPClien.5AB7925F.Up2Date
 C:\Users\Acer\Desktop\prmuis\projekat\TCPClientOsoblje\obj\Debug\TCPClientOsoblje.exe
 C:\Users\Acer\Desktop\prmuis\projekat\TCPClientOsoblje\obj\Debug\TCPClientOsoblje.pdb
+C:\Users\Acer\Documents\GitHub\prmisProjekat\projekat\TCPClientOsoblje\bin\Debug\TCPClientOsoblje.exe.config
+C:\Users\Acer\Documents\GitHub\prmisProjekat\projekat\TCPClientOsoblje\bin\Debug\TCPClientOsoblje.exe
+C:\Users\Acer\Documents\GitHub\prmisProjekat\projekat\TCPClientOsoblje\bin\Debug\TCPClientOsoblje.pdb
+C:\Users\Acer\Documents\GitHub\prmisProjekat\projekat\TCPClientOsoblje\bin\Debug\Biblioteka.dll
+C:\Users\Acer\Documents\GitHub\prmisProjekat\projekat\TCPClientOsoblje\bin\Debug\Biblioteka.pdb
+C:\Users\Acer\Documents\GitHub\prmisProjekat\projekat\TCPClientOsoblje\obj\Debug\TCPClientOsoblje.csproj.AssemblyReference.cache
+C:\Users\Acer\Documents\GitHub\prmisProjekat\projekat\TCPClientOsoblje\obj\Debug\TCPClientOsoblje.csproj.CoreCompileInputs.cache
+C:\Users\Acer\Documents\GitHub\prmisProjekat\projekat\TCPClientOsoblje\obj\Debug\TCPClien.5AB7925F.Up2Date
+C:\Users\Acer\Documents\GitHub\prmisProjekat\projekat\TCPClientOsoblje\obj\Debug\TCPClientOsoblje.exe
+C:\Users\Acer\Documents\GitHub\prmisProjekat\projekat\TCPClientOsoblje\obj\Debug\TCPClientOsoblje.pdb

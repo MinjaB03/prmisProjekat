@@ -23,12 +23,15 @@ namespace UDPClientGost
            // List<Gost> gosti = new List<Gost>();
             BinaryFormatter formatter = new BinaryFormatter();
 
-            while (true)
-            {
+            
                 byte[] prijemniBafer = new byte[1024];
                 Console.WriteLine("---------HOTEL---------\n Odaberite 1 - za pokusaj rezervacije ili 2 - za izlaz:");
                 if (Console.ReadLine() == "2")
-                    break;
+                {
+                    Console.WriteLine("Gost zavrsava sa radom");
+                    clientSocket.Close(); // Zatvaramo soket na kraju rada
+                    Console.ReadKey();
+                }
                 Console.WriteLine("Odabrali ste POKUSAJ REZERVACIJE");
                 Console.WriteLine("Broj gostiju: ");
                 int brG = int.Parse(Console.ReadLine());
@@ -36,21 +39,10 @@ namespace UDPClientGost
                 int brAp = int.Parse(Console.ReadLine());
                 Console.WriteLine("Broj nocenja: ");
                 int brN = int.Parse(Console.ReadLine());
-                /* Console.WriteLine("Klasa apartmana");
-                 string kl = Console.ReadLine();
-                 Klasa k;
-                 if (kl == "I")
-                     k = Klasa.I;
-                 else if (kl == "II")
-                     k = Klasa.II;
-                 else
-                     k = Klasa.III;
-                 Console.WriteLine("");
-                 Console.WriteLine("");
-                 Console.WriteLine("");*/
-                string rezervacija = brAp + ";" + brG + ";" + brN + ";";
-                try
-                {
+                string rezervacija = "rez;" + brAp + ";" + brG + ";" + brN + ";";
+
+            try
+            {
                     byte[] binarnaPoruka = Encoding.UTF8.GetBytes(rezervacija);
                     int brBajta = clientSocket.SendTo(binarnaPoruka, 0, binarnaPoruka.Length, SocketFlags.None, destinationEP); // Poruka koju saljemo u binarnom zapisu, pocetak poruke, duzina, flegovi, odrediste
                     Console.WriteLine($"Uspesno poslata rezervacija");
@@ -89,18 +81,25 @@ namespace UDPClientGost
 
                         brBajta = clientSocket.ReceiveFrom(prijemniBafer, ref posiljaocEP);
                         string odgovor2 = Encoding.UTF8.GetString(prijemniBafer, 0, brBajta);
-                        Console.WriteLine($"Stigao je odgovor! Poruka:\n{odgovor2}");
-                    }
-                    else
+                    Console.WriteLine("Da li zelite da aktivirate alarm?(da ili ne)");
+                    string odg = Console.ReadLine(); // "da" ili "ne"
+                    string alarmPoruka = "alarm;" + odg;
+                    byte[] odgB = Encoding.UTF8.GetBytes(alarmPoruka);
+                    clientSocket.SendTo(odgB, 0, odgB.Length, SocketFlags.None, destinationEP);
+
+                }
+                else
                     {
-                        break;
+                    Console.WriteLine("Gost zavrsava sa radom");
+                    clientSocket.Close(); // Zatvaramo soket na kraju rada
+                    Console.ReadKey();
                     }
                 }
                 catch (SocketException ex)
                 {
                     Console.WriteLine($"Doslo je do greske tokom slanja poruke: \n{ex}");
                 }
-            }
+            
             Console.WriteLine("Gost zavrsava sa radom");
             clientSocket.Close(); // Zatvaramo soket na kraju rada
             Console.ReadKey();
