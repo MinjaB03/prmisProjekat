@@ -21,5 +21,6 @@ namespace Biblioteka
         public Alarm Alarm { get; set; }
         public List<Gost> Gosti { get; set; } = new List<Gost>();
         public int BrojNocenja {  get; set; }
+        public int Troskovi {  get; set; }
     }
 }

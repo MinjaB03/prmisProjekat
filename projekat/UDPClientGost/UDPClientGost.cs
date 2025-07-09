@@ -83,19 +83,24 @@ namespace UDPClientGost
                             clientSocket.SendTo(podaci, destinationEP);
                         }
                     }
-                    Console.WriteLine("Unesite broj noćenja:");
+                    // potvrda i trazenje unosa o br noc
+                    brBajta = clientSocket.ReceiveFrom(prijemniBafer, ref posiljaocEP);
+                    string zahtevZaNocenja = Encoding.UTF8.GetString(prijemniBafer, 0, brBajta);
+                    Console.WriteLine($"Server: {zahtevZaNocenja}");
+
+                    // unos broja noćenja
                     int brojNocenja = int.Parse(Console.ReadLine());
 
                     string nocenjaPoruka = $"nocenja;{izabraniBrojAp};{brojNocenja}";
                     byte[] binarnaNocenja = Encoding.UTF8.GetBytes(nocenjaPoruka);
                     clientSocket.SendTo(binarnaNocenja, destinationEP);
 
-                    //br nocenja
-                    int brBajta1 = clientSocket.ReceiveFrom(prijemniBafer, ref posiljaocEP);
-                    string odgovorNocenja = Encoding.UTF8.GetString(prijemniBafer, 0, brBajta1);
+                    //potvrda o nocenju
+                    brBajta = clientSocket.ReceiveFrom(prijemniBafer, ref posiljaocEP);
+                    string odgovorNocenja = Encoding.UTF8.GetString(prijemniBafer, 0, brBajta);
                     Console.WriteLine($"Server: {odgovorNocenja}");
 
-                    //alarm
+                    // alarm 
                     brBajta = clientSocket.ReceiveFrom(prijemniBafer, ref posiljaocEP);
                     string porukaAlarm = Encoding.UTF8.GetString(prijemniBafer, 0, brBajta);
                     Console.WriteLine(porukaAlarm);
@@ -105,6 +110,39 @@ namespace UDPClientGost
                     string alarmPoruka = $"alarm;{odgovorAlarma}";
                     byte[] binAlarm = Encoding.UTF8.GetBytes(alarmPoruka);
                     clientSocket.SendTo(binAlarm, destinationEP);
+
+                    // minibar 
+                    brBajta = clientSocket.ReceiveFrom(prijemniBafer, ref posiljaocEP);
+                    string porukaMinibar = Encoding.UTF8.GetString(prijemniBafer, 0, brBajta);
+                    Console.WriteLine(porukaMinibar);
+
+                    Console.Write("Odgovor (da/ne): ");
+                    string odgovorMinibar = Console.ReadLine();
+                    string minibarPoruka = $"minibar;{odgovorMinibar}";
+                    byte[] binMinibar = Encoding.UTF8.GetBytes(minibarPoruka);
+                    clientSocket.SendTo(binMinibar, destinationEP);
+
+                    byte[] buffer = new byte[1024];
+                    while (true)
+                    {
+                        int bytesRead = clientSocket.ReceiveFrom(buffer, ref posiljaocEP);
+                        string poruka = Encoding.UTF8.GetString(buffer, 0, bytesRead);
+                        if (poruka.StartsWith("Boravak završen"))
+                        {
+                            Console.WriteLine(poruka);
+                            // prikazi račun iz poruke
+                            Console.WriteLine("Unesite broj kreditne kartice:");
+                            string kartica = Console.ReadLine();
+                            string karticaPoruka = "kartica;" + kartica;
+                            byte[] karticaBytes = Encoding.UTF8.GetBytes(karticaPoruka);
+                            clientSocket.SendTo(karticaBytes, destinationEP);
+                        }
+                        else if (poruka.StartsWith("Plaćanje uspešno"))
+                        {
+                            Console.WriteLine(poruka);
+                            break; // izlazak iz petlje, kraj sesije
+                        }
+                    }
                 }
                 else
                 {

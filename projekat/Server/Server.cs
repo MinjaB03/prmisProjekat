@@ -41,6 +41,7 @@ namespace Server
             List<int> minibarZadaci = new List<int>();
             DateTime poslednjiUpdate = DateTime.Now;
             TimeSpan interval = TimeSpan.FromSeconds(40);
+            string racunCeo = "----------------------\n";
            
 
             while (true)
@@ -65,6 +66,15 @@ namespace Server
 
                                 if (!ciscenjeZadaci.Contains(ap.BrojAp))
                                     ciscenjeZadaci.Add(ap.BrojAp);
+                                // Slanje poruke gostu sa računom
+                                if (apartmaniPoKlijentu.ContainsValue(ap.BrojAp))
+                                {
+                                    var klijentEP = apartmaniPoKlijentu.FirstOrDefault(p => p.Value == ap.BrojAp).Key;
+                                    string racun = $"Boravak završen. Ukupni troškovi su: {ap.Troskovi} EUR. \n{racunCeo} ----------------------";
+                                    byte[] racunBytes = Encoding.UTF8.GetBytes(racun);
+                                    serverSocketUDP.SendTo(racunBytes, klijentEP);
+                                }
+
 
                                 Console.WriteLine($"Apartman {ap.BrojAp} je sada slobodan i dodat je zadatak čišćenja.");
                             }
@@ -142,6 +152,7 @@ namespace Server
                                             odgovorGostu = "Rezervacija primljena";
                                             apartmani[i].Stanje = Stanje.ZAUZET;
                                             apartmani[i].TrenutniBrGostiju = brG;
+                                            racunCeo += "APARTMAN:                   " + apartmani[i].Troskovi + "\n";
                                         }
                                         else
                                             odgovorGostu = "Rezervacija odbijena";
@@ -186,9 +197,11 @@ namespace Server
                                     Console.WriteLine($"Ime: {g.Ime}, Prezime: {g.Prezime}, Pol: {g.Pol}, Dat. rodj: {g.DatRodj}, Pasos: {g.BrPasosa}");
                                 }
 
-                                odgovorGostu = "Podaci su uspesno primljeni! Da li zelite da aktivirate alarm?";
+                                odgovorGostu = "Podaci su uspesno primljeni! Unesite broj noćenja:";
                                 binarniOdgovor = Encoding.UTF8.GetBytes(odgovorGostu);
                                 serverSocketUDP.SendTo(binarniOdgovor, posiljaocEP);
+
+
                             }
                             else if (porukaUDP.StartsWith("alarm;"))
                             {
@@ -207,16 +220,36 @@ namespace Server
                                     }
                                 }
                             }
+                            else if (porukaUDP.StartsWith("minibar;"))
+                            {
+                                string korisnickiOdgovor = podaci[1].Trim().ToLower();
+                                if (korisnickiOdgovor == "da")
+                                {
+                                    Console.WriteLine("Odabrano korišćenje minibara.");
+                                    if (apartmaniPoKlijentu.ContainsKey((IPEndPoint)posiljaocEP))
+                                    {
+                                        int brAp = apartmaniPoKlijentu[(IPEndPoint)posiljaocEP];
+                                        if (!minibarZadaci.Contains(brAp))
+                                        {
+                                            minibarZadaci.Add(brAp);
+                                            Console.WriteLine($"Zadatak za minibar za apartman {brAp} dodat.");
+                                        }
+                                    }
+                                }
+                            }
+
                             else if (porukaUDP.StartsWith("nocenja;"))
                             {
                                 string[] delovi = porukaUDP.Split(';');
                                 int brojAp = int.Parse(delovi[1]);
                                 int brojNocenja = int.Parse(delovi[2]);
 
-                                var ap = apartmani.FirstOrDefault(a => a.BrojAp == brojAp);
+                                Apartman ap = apartmani.FirstOrDefault(a => a.BrojAp == brojAp);
                                 if (ap != null)
                                 {
                                     ap.BrojNocenja = brojNocenja;
+                                    ap.Troskovi = ap.Troskovi * brojNocenja ;
+                                    racunCeo += "BROJ NOCENJA:                 " + brojNocenja + "\n";
                                     Console.WriteLine($"Postavljen broj noćenja {brojNocenja} za apartman {brojAp}.");
 
                                     string potvrda = "Broj noćenja je evidentiran.";
@@ -229,7 +262,29 @@ namespace Server
                                     byte[] binarnaGreska = Encoding.UTF8.GetBytes(greska);
                                     serverSocketUDP.SendTo(binarnaGreska, posiljaocEP);
                                 }
+                                // nakon što se pošalje potvrda o noćenjima
+                                string porukaAlarm = "Da li zelite da aktivirate alarm?";
+                                byte[] binAlarm = Encoding.UTF8.GetBytes(porukaAlarm);
+                                serverSocketUDP.SendTo(binAlarm, posiljaocEP);
+
+                                string porukaMinibar = "Da li želite da koristite minibar?";
+                                byte[] binMinibar = Encoding.UTF8.GetBytes(porukaMinibar);
+                                serverSocketUDP.SendTo(binMinibar, posiljaocEP);
+
                             }
+
+                            else if (porukaUDP.StartsWith("kartica;"))
+                            {
+                                string brojKartice = podaci[1];
+                                Console.WriteLine($"Uneta kartica za plaćanje: {brojKartice}");
+
+                                // Po želji: validacija kartice
+
+                                string potvrda = "Plaćanje uspešno. Hvala na korišćenju naših usluga!";
+                                byte[] potvrdaBytes = Encoding.UTF8.GetBytes(potvrda);
+                                serverSocketUDP.SendTo(potvrdaBytes, posiljaocEP);
+                            }
+
 
                         }
                         else if (s == serverSocketTCP) // ako je stiglo na tcp
@@ -292,6 +347,8 @@ namespace Server
                                     if (tipZadatka == "alarm")
                                     {
                                         ap.Alarm = Alarm.AKTIVIRANO;
+                                        ap.Troskovi += 20;
+                                        racunCeo += "KORISCENJE ALARMA:        20\n";
                                         alarmZadaci.Remove(brojAp);
                                     }
                                     else if (tipZadatka == "ciscenje")
@@ -303,6 +360,8 @@ namespace Server
                                     }
                                     else if (tipZadatka == "minibar")
                                     {
+                                        ap.Troskovi += 50;
+                                        racunCeo += "KORISCENJE MINIBARA:      50\n";
                                         minibarZadaci.Remove(brojAp);
                                     }
 
