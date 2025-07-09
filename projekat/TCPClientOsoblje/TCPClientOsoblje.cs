@@ -29,10 +29,12 @@ namespace TCPClientOsoblje
 
             while (true)
             {
-                byte[] prijemniBafer = new byte[1024];
+                List<Socket> lista = new List<Socket>() { clientSocket };
+                Socket.Select(lista, null, null, 1000); // proverava svake sekunde da li ima poruka
 
-                try
+                if (lista.Count > 0)
                 {
+                    byte[] prijemniBafer = new byte[1024];
                     int brBajta = clientSocket.Receive(prijemniBafer);
                     string poruka = Encoding.UTF8.GetString(prijemniBafer, 0, brBajta);
 
@@ -42,17 +44,35 @@ namespace TCPClientOsoblje
                         break;
                     }
 
-                    Console.WriteLine($"Dobili ste zadatak: {poruka}");
+                    string[] podaci = poruka.Split(';');
+                    string tip = podaci[0];
+                    string brojAp = podaci.Length > 1 ? podaci[1] : "nepoznat";
 
-                    Console.WriteLine("Posaljite potvrdu o izvrsenom zadatku.");
-                    string odgovor = Console.ReadLine();
-                    int brBajtaOdg = clientSocket.Send(Encoding.UTF8.GetBytes(odgovor));
-                }
-                catch (SocketException ex)
-                {
-                    Console.WriteLine($"Doslo je do greske tokom slanja poruke: \n{ex}");
+                    Console.WriteLine($"Dobili ste zadatak: {tip} za apartman {brojAp}");
+                    Console.WriteLine("Unesite 'potvrdjujem' kada završite zadatak:");
+                    string odgovor = Console.ReadLine()?.Trim().ToLower();
+
+                    if (odgovor == "potvrdjujem")
+                    {
+                        string porukaZaServer = $"potvrdjujem;{tip.ToLower().Split(' ')[1]};{brojAp}";
+                        clientSocket.Send(Encoding.UTF8.GetBytes(porukaZaServer));
+                        Console.WriteLine("Poslata potvrda o izvršenju zadatka.");
+                    }
+
+
+                    // Simulacija izvršavanja zadatka
+                    Console.WriteLine("Unesite 'potvrdjujem' kada završite zadatak:");
+                    string odgovor1 = Console.ReadLine()?.Trim().ToLower();
+
+                    if (odgovor1 == "potvrdjujem")
+                    {
+                        clientSocket.Send(Encoding.UTF8.GetBytes(odgovor1));
+                        Console.WriteLine("Poslata potvrda o izvršenju zadatka.");
+                        break;
+                    }
                 }
             }
+
             Console.WriteLine("Osoblje zavrsava sa radom");
             clientSocket.Close(); // Zatvaramo soket na kraju rada
             Console.ReadKey();

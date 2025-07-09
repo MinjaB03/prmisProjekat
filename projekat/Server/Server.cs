@@ -37,6 +37,8 @@ namespace Server
             BinaryFormatter formatter = new BinaryFormatter();
             EndPoint posiljaocEP = new IPEndPoint(IPAddress.Any, 0);
             List<int> alarmZadaci = new List<int>();
+            List<int> ciscenjeZadaci = new List<int>();
+            List<int> minibarZadaci = new List<int>();
 
             while (true)
             {
@@ -145,7 +147,14 @@ namespace Server
                             noviKlijent.Blocking = false;
                             tcpKlijenti.Add(noviKlijent);
 
-                            string zadatak = alarmZadaci.Count > 0 ? "Aktiviraj alarm" : "nema zadataka";
+                            string zadatak = "nema zadataka";
+                            if (alarmZadaci.Count > 0)
+                                zadatak = $"Aktiviraj alarm;{alarmZadaci[0]}";
+                            else if (ciscenjeZadaci.Count > 0)
+                                zadatak = $"Ocisti apartman;{ciscenjeZadaci[0]}";
+                            else if (minibarZadaci.Count > 0)
+                                zadatak = $"Obnovi minibar;{minibarZadaci[0]}";
+
                             byte[] binarniZadatak = Encoding.UTF8.GetBytes(zadatak);
                             noviKlijent.Send(binarniZadatak);
                         }
@@ -177,40 +186,39 @@ namespace Server
 
                             string porukaTCP = Encoding.UTF8.GetString(prijemniBafer, 0, brBajtaTCP);
                             Console.WriteLine($"TCP poruka od {klijent.RemoteEndPoint}: {porukaTCP}");
-                            if (porukaTCP.Trim().ToLower() == "potvrdjujem")
+                            if (porukaTCP.StartsWith("potvrdjujem;"))
                             {
-                                Console.WriteLine($"Broj apartmana u alarmZadaci: {alarmZadaci.Count}");
-                                foreach (int brAp in alarmZadaci)
+                                string[] delovi = porukaTCP.Split(';');
+                                string tipZadatka = delovi[1].ToLower();
+                                int brojAp = int.Parse(delovi[2]);
+
+                                Apartman ap = apartmani.FirstOrDefault(a => a.BrojAp == brojAp);
+                                if (ap != null)
                                 {
-                                    foreach (Apartman a in apartmani)
+                                    if (tipZadatka == "alarm")
                                     {
-                                        if (a.BrojAp == brAp)
-                                        {
-                                            a.Alarm = Alarm.AKTIVIRANO;
-                                            Console.WriteLine($"Alarm status za apartman {a.BrojAp} je sada: {a.Alarm}");
-                                            Console.WriteLine($"Osoblje je aktiviralo alarm za apartman {a.BrojAp}");
-                                            Console.WriteLine("\n--- PODACI O APARTMANU ---");
-                                            Console.WriteLine($"Broj apartmana: {a.BrojAp}");
-                                            Console.WriteLine($"Stanje: {a.Stanje}");
-                                            Console.WriteLine($"Trenutni broj gostiju: {a.TrenutniBrGostiju}");
-                                            Console.WriteLine($"Alarm: {a.Alarm}");
-                                            Console.WriteLine($"Max broj gostiju: {a.MaxBrGostiju}");
-                                            Console.WriteLine("Gosti:");
-                                            foreach (Gost g in a.Gosti)
-                                            {
-                                                Console.WriteLine($"  Ime: {g.Ime}, Prezime: {g.Prezime}, Pol: {g.Pol}, Datum rodj: {g.DatRodj}, Pasos: {g.BrPasosa}");
-                                            }
-                                            Console.WriteLine("--------------------------\n");
-
-                                        }
+                                        ap.Alarm = Alarm.AKTIVIRANO;
+                                        alarmZadaci.Remove(brojAp);
                                     }
-                                }
-                                alarmZadaci.Clear();
+                                    else if (tipZadatka == "ciscenje")
+                                    {
+                                        ap.Stanje = Stanje.PRAZAN;
+                                        ap.Gosti.Clear();
+                                        ap.TrenutniBrGostiju = 0;
+                                        ciscenjeZadaci.Remove(brojAp);
+                                    }
+                                    else if (tipZadatka == "minibar")
+                                    {
+                                        // nestoo
+                                        minibarZadaci.Remove(brojAp);
+                                    }
 
-                                // Pošalji potvrdu klijentu
-                                byte[] potvrda = Encoding.UTF8.GetBytes("Alarm aktiviran");
-                                klijent.Send(potvrda);
+                                    Console.WriteLine($"Zadatak '{tipZadatka}' za apartman {brojAp} je izvršen.");
+                                    klijent.Send(Encoding.UTF8.GetBytes("Zadatak izvršen."));
+                                }
                             }
+
+
                             if (porukaTCP.Trim().ToLower() == "kraj")
                             {
                                 Console.WriteLine("Server zavrsava sa radom");

@@ -3,19 +3,15 @@
   "WorkspaceRootPath": "C:\\Users\\Acer\\Documents\\GitHub\\prmisProjekat\\projekat\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{48745349-AF06-4F01-BC20-90E9BC61BD6F}|Server\\Server.csproj|C:\\Users\\Acer\\Documents\\GitHub\\prmisProjekat\\projekat\\server\\server.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{48745349-AF06-4F01-BC20-90E9BC61BD6F}|Server\\Server.csproj|c:\\users\\acer\\documents\\github\\prmisprojekat\\projekat\\server\\server.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{48745349-AF06-4F01-BC20-90E9BC61BD6F}|Server\\Server.csproj|solutionrelative:server\\server.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{873F413C-296F-4DE8-ADF4-527363CBC71E}|TCPClientOsoblje\\TCPClientOsoblje.csproj|c:\\users\\acer\\documents\\github\\prmisprojekat\\projekat\\tcpclientosoblje\\tcpclientosoblje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{873F413C-296F-4DE8-ADF4-527363CBC71E}|TCPClientOsoblje\\TCPClientOsoblje.csproj|C:\\Users\\Acer\\Documents\\GitHub\\prmisProjekat\\projekat\\tcpclientosoblje\\tcpclientosoblje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{873F413C-296F-4DE8-ADF4-527363CBC71E}|TCPClientOsoblje\\TCPClientOsoblje.csproj|solutionrelative:tcpclientosoblje\\tcpclientosoblje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5E91B3C3-6B70-4EF3-A2DC-48489E3C7B62}|UDPClientGost\\UDPClientGost.csproj|C:\\Users\\Acer\\Documents\\GitHub\\prmisProjekat\\projekat\\udpclientgost\\udpclientgost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E91B3C3-6B70-4EF3-A2DC-48489E3C7B62}|UDPClientGost\\UDPClientGost.csproj|solutionrelative:udpclientgost\\udpclientgost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{76B5A125-5506-40B1-93FA-5A3EA1D2A0D2}|Biblioteka\\Biblioteka.csproj|c:\\users\\acer\\documents\\github\\prmisprojekat\\projekat\\biblioteka\\pocetniapartmani.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{76B5A125-5506-40B1-93FA-5A3EA1D2A0D2}|Biblioteka\\Biblioteka.csproj|C:\\Users\\Acer\\Documents\\GitHub\\prmisProjekat\\projekat\\biblioteka\\pocetniapartmani.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{76B5A125-5506-40B1-93FA-5A3EA1D2A0D2}|Biblioteka\\Biblioteka.csproj|solutionrelative:biblioteka\\pocetniapartmani.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -23,12 +19,16 @@
       "RelativeMoniker": "D:0:0:{76B5A125-5506-40B1-93FA-5A3EA1D2A0D2}|Biblioteka\\Biblioteka.csproj|solutionrelative:biblioteka\\gost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{76B5A125-5506-40B1-93FA-5A3EA1D2A0D2}|Biblioteka\\Biblioteka.csproj|C:\\Users\\Acer\\Documents\\GitHub\\prmisProjekat\\projekat\\biblioteka\\osoblje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76B5A125-5506-40B1-93FA-5A3EA1D2A0D2}|Biblioteka\\Biblioteka.csproj|solutionrelative:biblioteka\\osoblje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{76B5A125-5506-40B1-93FA-5A3EA1D2A0D2}|Biblioteka\\Biblioteka.csproj|C:\\Users\\Acer\\Documents\\GitHub\\prmisProjekat\\projekat\\biblioteka\\apartman.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{76B5A125-5506-40B1-93FA-5A3EA1D2A0D2}|Biblioteka\\Biblioteka.csproj|solutionrelative:biblioteka\\apartman.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{76B5A125-5506-40B1-93FA-5A3EA1D2A0D2}|Biblioteka\\Biblioteka.csproj|C:\\Users\\Acer\\Documents\\GitHub\\prmisProjekat\\projekat\\biblioteka\\osoblje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{76B5A125-5506-40B1-93FA-5A3EA1D2A0D2}|Biblioteka\\Biblioteka.csproj|solutionrelative:biblioteka\\osoblje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5E91B3C3-6B70-4EF3-A2DC-48489E3C7B62}|UDPClientGost\\UDPClientGost.csproj|C:\\Users\\Acer\\Documents\\GitHub\\prmisProjekat\\projekat\\udpclientgost\\udpclientgost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E91B3C3-6B70-4EF3-A2DC-48489E3C7B62}|UDPClientGost\\UDPClientGost.csproj|solutionrelative:udpclientgost\\udpclientgost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,20 +42,20 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "PocetniApartmani.cs",
               "DocumentMoniker": "C:\\Users\\Acer\\Documents\\GitHub\\prmisProjekat\\projekat\\Biblioteka\\PocetniApartmani.cs",
               "RelativeDocumentMoniker": "Biblioteka\\PocetniApartmani.cs",
               "ToolTip": "C:\\Users\\Acer\\Documents\\GitHub\\prmisProjekat\\projekat\\Biblioteka\\PocetniApartmani.cs",
               "RelativeToolTip": "Biblioteka\\PocetniApartmani.cs",
-              "ViewState": "AQIAACwAAAAAAAAAAAAAwEcAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-08T18:20:41.154Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "Gost.cs",
               "DocumentMoniker": "C:\\Users\\Acer\\Documents\\GitHub\\prmisProjekat\\projekat\\Biblioteka\\Gost.cs",
               "RelativeDocumentMoniker": "Biblioteka\\Gost.cs",
@@ -68,15 +68,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "Osoblje.cs",
               "DocumentMoniker": "C:\\Users\\Acer\\Documents\\GitHub\\prmisProjekat\\projekat\\Biblioteka\\Osoblje.cs",
               "RelativeDocumentMoniker": "Biblioteka\\Osoblje.cs",
               "ToolTip": "C:\\Users\\Acer\\Documents\\GitHub\\prmisProjekat\\projekat\\Biblioteka\\Osoblje.cs",
               "RelativeToolTip": "Biblioteka\\Osoblje.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAABAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-08T13:27:02.573Z"
+              "WhenOpened": "2025-07-08T13:27:02.573Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -86,20 +87,20 @@
               "RelativeDocumentMoniker": "Biblioteka\\Apartman.cs",
               "ToolTip": "C:\\Users\\Acer\\Documents\\GitHub\\prmisProjekat\\projekat\\Biblioteka\\Apartman.cs",
               "RelativeToolTip": "Biblioteka\\Apartman.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAA6wBQAAAAoAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-08T13:26:49.523Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "UDPClientGost.cs",
               "DocumentMoniker": "C:\\Users\\Acer\\Documents\\GitHub\\prmisProjekat\\projekat\\UDPClientGost\\UDPClientGost.cs",
               "RelativeDocumentMoniker": "UDPClientGost\\UDPClientGost.cs",
               "ToolTip": "C:\\Users\\Acer\\Documents\\GitHub\\prmisProjekat\\projekat\\UDPClientGost\\UDPClientGost.cs",
               "RelativeToolTip": "UDPClientGost\\UDPClientGost.cs",
-              "ViewState": "AQIAAE4AAAAAAAAAAAAmwFgAAAAAAAAA",
+              "ViewState": "AQIAAEcAAAAAAAAAAAAIwGwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-08T13:23:40.095Z",
               "EditorCaption": ""
@@ -112,7 +113,7 @@
               "RelativeDocumentMoniker": "TCPClientOsoblje\\TCPClientOsoblje.cs",
               "ToolTip": "C:\\Users\\Acer\\Documents\\GitHub\\prmisProjekat\\projekat\\TCPClientOsoblje\\TCPClientOsoblje.cs",
               "RelativeToolTip": "TCPClientOsoblje\\TCPClientOsoblje.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAZAAAA",
+              "ViewState": "AQIAACIAAAAAAAAAAAAqwEYAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-08T13:23:17.029Z",
               "EditorCaption": ""
@@ -125,7 +126,7 @@
               "RelativeDocumentMoniker": "Server\\Server.cs",
               "ToolTip": "C:\\Users\\Acer\\Documents\\GitHub\\prmisProjekat\\projekat\\Server\\Server.cs",
               "RelativeToolTip": "Server\\Server.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAxwLEAAABlAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-08T13:22:53.613Z",
               "EditorCaption": ""
