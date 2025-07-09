@@ -39,10 +39,39 @@ namespace Server
             List<int> alarmZadaci = new List<int>();
             List<int> ciscenjeZadaci = new List<int>();
             List<int> minibarZadaci = new List<int>();
+            DateTime poslednjiUpdate = DateTime.Now;
+            TimeSpan interval = TimeSpan.FromSeconds(40);
+           
 
             while (true)
             {
                 byte[] prijemniBafer = new byte[1024];
+                if (DateTime.Now - poslednjiUpdate > interval)
+                {
+                    poslednjiUpdate = DateTime.Now;
+
+                    foreach (Apartman ap in apartmani)
+                    {
+                        if (ap.BrojNocenja > 0)
+                        {
+                            ap.BrojNocenja--;
+                            Console.WriteLine($"Apartman {ap.BrojAp} ima još {ap.BrojNocenja} noćenja.");
+
+                            if (ap.BrojNocenja == 0)
+                            {
+                                ap.Stanje = Stanje.PRAZAN;
+                                ap.Gosti.Clear();
+                                ap.TrenutniBrGostiju = 0;
+
+                                if (!ciscenjeZadaci.Contains(ap.BrojAp))
+                                    ciscenjeZadaci.Add(ap.BrojAp);
+
+                                Console.WriteLine($"Apartman {ap.BrojAp} je sada slobodan i dodat je zadatak čišćenja.");
+                            }
+                        }
+                    }
+                }
+
                 try
                 {
                     List<Socket> readSockets = new List<Socket> { serverSocketUDP, serverSocketTCP}; // dodajem obe uticnice u readSockets listu
@@ -178,6 +207,29 @@ namespace Server
                                     }
                                 }
                             }
+                            else if (porukaUDP.StartsWith("nocenja;"))
+                            {
+                                string[] delovi = porukaUDP.Split(';');
+                                int brojAp = int.Parse(delovi[1]);
+                                int brojNocenja = int.Parse(delovi[2]);
+
+                                var ap = apartmani.FirstOrDefault(a => a.BrojAp == brojAp);
+                                if (ap != null)
+                                {
+                                    ap.BrojNocenja = brojNocenja;
+                                    Console.WriteLine($"Postavljen broj noćenja {brojNocenja} za apartman {brojAp}.");
+
+                                    string potvrda = "Broj noćenja je evidentiran.";
+                                    byte[] binarnaPotvrda = Encoding.UTF8.GetBytes(potvrda);
+                                    serverSocketUDP.SendTo(binarnaPotvrda, posiljaocEP);
+                                }
+                                else
+                                {
+                                    string greska = "Apartman nije pronađen.";
+                                    byte[] binarnaGreska = Encoding.UTF8.GetBytes(greska);
+                                    serverSocketUDP.SendTo(binarnaGreska, posiljaocEP);
+                                }
+                            }
 
                         }
                         else if (s == serverSocketTCP) // ako je stiglo na tcp
@@ -208,6 +260,9 @@ namespace Server
                     List<Socket> spremniTCP = new List<Socket>(tcpKlijenti);
                     Socket.Select(spremniTCP, null, null, 1000);
 
+
+                    List<Socket> zaUklanjanje = new List<Socket>();
+
                     foreach (Socket klijent in spremniTCP)
                     {
                         try
@@ -219,7 +274,7 @@ namespace Server
                             {
                                 Console.WriteLine("Klijent je zatvorio konekciju.");
                                 klijent.Close();
-                                tcpKlijenti.Remove(klijent);
+                                zaUklanjanje.Add(klijent);
                                 continue;
                             }
 
@@ -248,7 +303,6 @@ namespace Server
                                     }
                                     else if (tipZadatka == "minibar")
                                     {
-                                        // nestoo
                                         minibarZadaci.Remove(brojAp);
                                     }
 
@@ -256,7 +310,6 @@ namespace Server
                                     klijent.Send(Encoding.UTF8.GetBytes("Zadatak izvršen."));
                                 }
                             }
-
 
                             if (porukaTCP.Trim().ToLower() == "kraj")
                             {
@@ -266,16 +319,32 @@ namespace Server
                                 Console.ReadKey();
                                 Environment.Exit(0);
                             }
-
-
                         }
                         catch (SocketException ex)
                         {
-                            Console.WriteLine($"Greška u TCP komunikaciji: {ex.Message}");
+                            if (ex.SocketErrorCode == SocketError.ConnectionAborted || ex.SocketErrorCode == SocketError.ConnectionReset)
+                            {
+                                Console.WriteLine("Konekcija klijenta je zatvorena.");
+                            }
+                            else
+                            {
+                                Console.WriteLine($"Greška u TCP komunikaciji: {ex.Message}");
+                            }
+
+                            klijent.Close();
+                            zaUklanjanje.Add(klijent);
                         }
+
                     }
-                 }
+
+                    foreach (var klijentZaUklanjanje in zaUklanjanje)
+                    {
+                        tcpKlijenti.Remove(klijentZaUklanjanje);
+                    }
+
+                }
+            }
             }
         }
-    }
+
 }

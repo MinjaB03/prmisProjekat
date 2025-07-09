@@ -18,7 +18,8 @@ namespace Biblioteka
                 TrenutniBrGostiju = 0,
                 Stanje = Stanje.PRAZAN,
                 Alarm = Alarm.NORMALNO,
-                Gosti = new List<Gost>()
+                Gosti = new List<Gost>(),
+                BrojNocenja = 0
             };
             apartmani.Add(a1);
 
@@ -30,7 +31,9 @@ namespace Biblioteka
                 TrenutniBrGostiju = 0,
                 Stanje = Stanje.PRAZAN,
                 Alarm = Alarm.NORMALNO,
-                Gosti = new List<Gost>()
+                Gosti = new List<Gost>(),
+                BrojNocenja = 0
+
             };
             apartmani.Add(a2);
 
@@ -42,7 +45,9 @@ namespace Biblioteka
                 TrenutniBrGostiju = 0,
                 Stanje = Stanje.PRAZAN,
                 Alarm = Alarm.NORMALNO,
-                Gosti = new List<Gost>()
+                Gosti = new List<Gost>(),
+                BrojNocenja = 0
+
             };
             apartmani.Add(a3);
 
@@ -54,7 +59,9 @@ namespace Biblioteka
                 TrenutniBrGostiju = 0,
                 Stanje = Stanje.PRAZAN,
                 Alarm = Alarm.NORMALNO,
-                Gosti = new List<Gost>()
+                Gosti = new List<Gost>(),
+                BrojNocenja = 0
+
             };
             apartmani.Add(a4);
 
@@ -66,7 +73,9 @@ namespace Biblioteka
                 TrenutniBrGostiju = 0,
                 Stanje = Stanje.PRAZAN,
                 Alarm = Alarm.NORMALNO,
-                Gosti = new List<Gost>()
+                Gosti = new List<Gost>(),
+                BrojNocenja = 0
+
             };
             apartmani.Add(a5);
 

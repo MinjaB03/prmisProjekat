@@ -25,12 +25,10 @@ namespace TCPClientOsoblje
             clientSocket.Connect(serverEP);
             Console.WriteLine("Klijent je uspesno povezan sa serverom!");
 
-            //EndPoint posiljaocEP = new IPEndPoint(IPAddress.Any, 0);
-
             while (true)
             {
                 List<Socket> lista = new List<Socket>() { clientSocket };
-                Socket.Select(lista, null, null, 1000); // proverava svake sekunde da li ima poruka
+                Socket.Select(lista, null, null, 1000); 
 
                 if (lista.Count > 0)
                 {
@@ -57,24 +55,13 @@ namespace TCPClientOsoblje
                         string porukaZaServer = $"potvrdjujem;{tip.ToLower().Split(' ')[1]};{brojAp}";
                         clientSocket.Send(Encoding.UTF8.GetBytes(porukaZaServer));
                         Console.WriteLine("Poslata potvrda o izvršenju zadatka.");
-                    }
-
-
-                    // Simulacija izvršavanja zadatka
-                    Console.WriteLine("Unesite 'potvrdjujem' kada završite zadatak:");
-                    string odgovor1 = Console.ReadLine()?.Trim().ToLower();
-
-                    if (odgovor1 == "potvrdjujem")
-                    {
-                        clientSocket.Send(Encoding.UTF8.GetBytes(odgovor1));
-                        Console.WriteLine("Poslata potvrda o izvršenju zadatka.");
                         break;
                     }
                 }
             }
 
             Console.WriteLine("Osoblje zavrsava sa radom");
-            clientSocket.Close(); // Zatvaramo soket na kraju rada
+            clientSocket.Close();
             Console.ReadKey();
 
         }

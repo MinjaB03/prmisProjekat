@@ -20,6 +20,6 @@ namespace Biblioteka
         public Stanje Stanje { get; set; }
         public Alarm Alarm { get; set; }
         public List<Gost> Gosti { get; set; } = new List<Gost>();
-
+        public int BrojNocenja {  get; set; }
     }
 }
