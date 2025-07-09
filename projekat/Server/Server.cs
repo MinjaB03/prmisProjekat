@@ -56,8 +56,47 @@ namespace Server
                             int brBajtaUDP = serverSocketUDP.ReceiveFrom(prijemniBafer, ref posiljaocEP);
                             string porukaUDP = Encoding.UTF8.GetString(prijemniBafer, 0, brBajtaUDP);
                             string[] podaci = porukaUDP.Split(';');
+                            if (porukaUDP.StartsWith("rezervisi;"))
+                            {
+                                string trazenaKlasa = podaci[1].Trim();
+                                Klasa k;
+                                if (trazenaKlasa == "I")
+                                    k = Klasa.I;
+                                else if (trazenaKlasa == "II")
+                                    k = Klasa.II;
+                                else
+                                    k = Klasa.III;
+                                int trazeniBrojGostiju = int.Parse(podaci[2]);
 
-                            if (porukaUDP.StartsWith("rez;"))
+                                Console.WriteLine($"Klijent traži apartman klase '{trazenaKlasa}' za {trazeniBrojGostiju} gostiju.");
+
+                                List<Apartman> slobodniApartmani = apartmani
+                                    .Where(ap => ap.Stanje == Stanje.PRAZAN &&
+                                                 ap.Klasa == k &&
+                                                 ap.MaxBrGostiju >= trazeniBrojGostiju)
+                                    .ToList();
+
+                                if (slobodniApartmani.Count == 0)
+                                {
+                                    string nema = "Nema dostupnih apartmana za tražene uslove.";
+                                    byte[] odgovor = Encoding.UTF8.GetBytes(nema);
+                                    serverSocketUDP.SendTo(odgovor, posiljaocEP);
+                                }
+                                else
+                                {
+                                    StringBuilder sb = new StringBuilder();
+                                    sb.AppendLine("Dostupni apartmani:");
+                                    foreach (var ap in slobodniApartmani)
+                                    {
+                                        sb.AppendLine($"Broj: {ap.BrojAp}, Max gostiju: {ap.MaxBrGostiju}");
+                                    }
+
+                                    byte[] odgovor = Encoding.UTF8.GetBytes(sb.ToString());
+                                    serverSocketUDP.SendTo(odgovor, posiljaocEP);
+                                }
+                            }
+
+                            else if (porukaUDP.StartsWith("rez;"))
                             {
                                 int brAp = int.Parse(podaci[1]);
                                 int brG = int.Parse(podaci[2]);
