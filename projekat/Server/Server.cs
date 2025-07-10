@@ -123,14 +123,13 @@ namespace Server
                                 }
                                 else
                                 {
-                                    StringBuilder sb = new StringBuilder();
-                                    sb.AppendLine("Dostupni apartmani:");
-                                    foreach (var ap in slobodniApartmani)
+                                    string ima = "Dostupni apartmani:\n";
+                                    foreach (Apartman ap in slobodniApartmani)
                                     {
-                                        sb.AppendLine($"Broj: {ap.BrojAp}, Max gostiju: {ap.MaxBrGostiju}");
+                                        ima += "Broj:" +ap.BrojAp + "Max gostiju: " + ap.MaxBrGostiju + "\n";
                                     }
 
-                                    byte[] odgovor = Encoding.UTF8.GetBytes(sb.ToString());
+                                    byte[] odgovor = Encoding.UTF8.GetBytes(ima);
                                     serverSocketUDP.SendTo(odgovor, posiljaocEP);
                                 }
                             }
