@@ -191,12 +191,19 @@ namespace Server
                                     }
                                 }
 
+                                gosti.Clear();
                                 Console.WriteLine("Primljeni gosti:");
-                                foreach (Gost g in gosti)
+                                foreach(Apartman ap in apartmani)
                                 {
-                                    Console.WriteLine($"Ime: {g.Ime}, Prezime: {g.Prezime}, Pol: {g.Pol}, Dat. rodj: {g.DatRodj}, Pasos: {g.BrPasosa}");
+                                    if(ap.BrojAp == brAp)
+                                    {
+                                        foreach (Gost g in ap.Gosti)
+                                        {
+                                            Console.WriteLine($"Ime: {g.Ime}, Prezime: {g.Prezime}, Pol: {g.Pol}, Dat. rodj: {g.DatRodj}, Pasos: {g.BrPasosa}");
+                                        }
+                                    }
                                 }
-
+                               
                                 odgovorGostu = "Podaci su uspesno primljeni! Unesite broj noćenja:";
                                 binarniOdgovor = Encoding.UTF8.GetBytes(odgovorGostu);
                                 serverSocketUDP.SendTo(binarniOdgovor, posiljaocEP);
@@ -278,8 +285,6 @@ namespace Server
                                 string brojKartice = podaci[1];
                                 Console.WriteLine($"Uneta kartica za plaćanje: {brojKartice}");
 
-                                // Po želji: validacija kartice
-
                                 string potvrda = "Plaćanje uspešno. Hvala na korišćenju naših usluga!";
                                 byte[] potvrdaBytes = Encoding.UTF8.GetBytes(potvrda);
                                 serverSocketUDP.SendTo(potvrdaBytes, posiljaocEP);
@@ -348,8 +353,10 @@ namespace Server
                                     {
                                         ap.Alarm = Alarm.AKTIVIRANO;
                                         ap.Troskovi += 20;
-                                        racunCeo += "KORISCENJE ALARMA:        20\n";
+                                        racunCeo += "KORISCENJE ALARMA:         20\n";
                                         alarmZadaci.Remove(brojAp);
+                                       // Console.WriteLine($"alarmZadaci count: {alarmZadaci.Count}");
+
                                     }
                                     else if (tipZadatka == "ciscenje")
                                     {
@@ -357,6 +364,7 @@ namespace Server
                                         ap.Gosti.Clear();
                                         ap.TrenutniBrGostiju = 0;
                                         ciscenjeZadaci.Remove(brojAp);
+                                        //Console.WriteLine($"ciscenjeZadaci count: {ciscenjeZadaci.Count}");
                                     }
                                     else if (tipZadatka == "minibar")
                                     {

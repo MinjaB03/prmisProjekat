@@ -52,7 +52,12 @@ namespace TCPClientOsoblje
 
                     if (odgovor == "potvrdjujem")
                     {
-                        string porukaZaServer = $"potvrdjujem;{tip.ToLower().Split(' ')[1]};{brojAp}";
+                        string komanda = tip.ToLower().Contains("alarm") ? "alarm" :
+                        tip.ToLower().Contains("minibar") ? "minibar" :
+                        tip.ToLower().Contains("ocisti") ? "ciscenje" : "nepoznato";
+
+                        string porukaZaServer = $"potvrdjujem;{komanda};{brojAp}";
+
                         clientSocket.Send(Encoding.UTF8.GetBytes(porukaZaServer));
                         Console.WriteLine("Poslata potvrda o izvršenju zadatka.");
                         break;
