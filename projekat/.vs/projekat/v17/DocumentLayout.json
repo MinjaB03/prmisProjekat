@@ -7,24 +7,24 @@
       "RelativeMoniker": "D:0:0:{48745349-AF06-4F01-BC20-90E9BC61BD6F}|Server\\Server.csproj|solutionrelative:server\\server.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{873F413C-296F-4DE8-ADF4-527363CBC71E}|TCPClientOsoblje\\TCPClientOsoblje.csproj|C:\\Users\\Acer\\Documents\\GitHub\\prmisProjekat\\projekat\\tcpclientosoblje\\tcpclientosoblje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{873F413C-296F-4DE8-ADF4-527363CBC71E}|TCPClientOsoblje\\TCPClientOsoblje.csproj|solutionrelative:tcpclientosoblje\\tcpclientosoblje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{76B5A125-5506-40B1-93FA-5A3EA1D2A0D2}|Biblioteka\\Biblioteka.csproj|C:\\Users\\Acer\\Documents\\GitHub\\prmisProjekat\\projekat\\biblioteka\\gost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76B5A125-5506-40B1-93FA-5A3EA1D2A0D2}|Biblioteka\\Biblioteka.csproj|solutionrelative:biblioteka\\gost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{76B5A125-5506-40B1-93FA-5A3EA1D2A0D2}|Biblioteka\\Biblioteka.csproj|C:\\Users\\Acer\\Documents\\GitHub\\prmisProjekat\\projekat\\biblioteka\\pocetniapartmani.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{76B5A125-5506-40B1-93FA-5A3EA1D2A0D2}|Biblioteka\\Biblioteka.csproj|solutionrelative:biblioteka\\pocetniapartmani.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{76B5A125-5506-40B1-93FA-5A3EA1D2A0D2}|Biblioteka\\Biblioteka.csproj|C:\\Users\\Acer\\Documents\\GitHub\\prmisProjekat\\projekat\\biblioteka\\osoblje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{76B5A125-5506-40B1-93FA-5A3EA1D2A0D2}|Biblioteka\\Biblioteka.csproj|solutionrelative:biblioteka\\osoblje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{76B5A125-5506-40B1-93FA-5A3EA1D2A0D2}|Biblioteka\\Biblioteka.csproj|C:\\Users\\Acer\\Documents\\GitHub\\prmisProjekat\\projekat\\biblioteka\\gost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{76B5A125-5506-40B1-93FA-5A3EA1D2A0D2}|Biblioteka\\Biblioteka.csproj|solutionrelative:biblioteka\\gost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{873F413C-296F-4DE8-ADF4-527363CBC71E}|TCPClientOsoblje\\TCPClientOsoblje.csproj|C:\\Users\\Acer\\Documents\\GitHub\\prmisProjekat\\projekat\\tcpclientosoblje\\tcpclientosoblje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{873F413C-296F-4DE8-ADF4-527363CBC71E}|TCPClientOsoblje\\TCPClientOsoblje.csproj|solutionrelative:tcpclientosoblje\\tcpclientosoblje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{76B5A125-5506-40B1-93FA-5A3EA1D2A0D2}|Biblioteka\\Biblioteka.csproj|C:\\Users\\Acer\\Documents\\GitHub\\prmisProjekat\\projekat\\biblioteka\\apartman.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{76B5A125-5506-40B1-93FA-5A3EA1D2A0D2}|Biblioteka\\Biblioteka.csproj|solutionrelative:biblioteka\\apartman.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76B5A125-5506-40B1-93FA-5A3EA1D2A0D2}|Biblioteka\\Biblioteka.csproj|C:\\Users\\Acer\\Documents\\GitHub\\prmisProjekat\\projekat\\biblioteka\\osoblje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76B5A125-5506-40B1-93FA-5A3EA1D2A0D2}|Biblioteka\\Biblioteka.csproj|solutionrelative:biblioteka\\osoblje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5E91B3C3-6B70-4EF3-A2DC-48489E3C7B62}|UDPClientGost\\UDPClientGost.csproj|C:\\Users\\Acer\\Documents\\GitHub\\prmisProjekat\\projekat\\udpclientgost\\udpclientgost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -48,14 +48,14 @@
               "RelativeDocumentMoniker": "Biblioteka\\PocetniApartmani.cs",
               "ToolTip": "C:\\Users\\Acer\\Documents\\GitHub\\prmisProjekat\\projekat\\Biblioteka\\PocetniApartmani.cs",
               "RelativeToolTip": "Biblioteka\\PocetniApartmani.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADwAAAAnAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-08T18:20:41.154Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "Gost.cs",
               "DocumentMoniker": "C:\\Users\\Acer\\Documents\\GitHub\\prmisProjekat\\projekat\\Biblioteka\\Gost.cs",
               "RelativeDocumentMoniker": "Biblioteka\\Gost.cs",
@@ -63,11 +63,12 @@
               "RelativeToolTip": "Biblioteka\\Gost.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-08T13:27:14.727Z"
+              "WhenOpened": "2025-07-08T13:27:14.727Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Osoblje.cs",
               "DocumentMoniker": "C:\\Users\\Acer\\Documents\\GitHub\\prmisProjekat\\projekat\\Biblioteka\\Osoblje.cs",
               "RelativeDocumentMoniker": "Biblioteka\\Osoblje.cs",
@@ -75,19 +76,21 @@
               "RelativeToolTip": "Biblioteka\\Osoblje.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-08T13:27:02.573Z"
+              "WhenOpened": "2025-07-08T13:27:02.573Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "Apartman.cs",
               "DocumentMoniker": "C:\\Users\\Acer\\Documents\\GitHub\\prmisProjekat\\projekat\\Biblioteka\\Apartman.cs",
               "RelativeDocumentMoniker": "Biblioteka\\Apartman.cs",
               "ToolTip": "C:\\Users\\Acer\\Documents\\GitHub\\prmisProjekat\\projekat\\Biblioteka\\Apartman.cs",
               "RelativeToolTip": "Biblioteka\\Apartman.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAcAAAABAAAA",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAwBgAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-08T13:26:49.523Z"
+              "WhenOpened": "2025-07-08T13:26:49.523Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -103,13 +106,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "TCPClientOsoblje.cs",
               "DocumentMoniker": "C:\\Users\\Acer\\Documents\\GitHub\\prmisProjekat\\projekat\\TCPClientOsoblje\\TCPClientOsoblje.cs",
               "RelativeDocumentMoniker": "TCPClientOsoblje\\TCPClientOsoblje.cs",
               "ToolTip": "C:\\Users\\Acer\\Documents\\GitHub\\prmisProjekat\\projekat\\TCPClientOsoblje\\TCPClientOsoblje.cs",
               "RelativeToolTip": "TCPClientOsoblje\\TCPClientOsoblje.cs",
-              "ViewState": "AQIAACgAAAAAAAAAAAAgwB0AAABJAAAA",
+              "ViewState": "AQIAABEAAAAAAAAAAAAQwBoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-08T13:23:17.029Z",
               "EditorCaption": ""
@@ -122,7 +125,7 @@
               "RelativeDocumentMoniker": "Server\\Server.cs",
               "ToolTip": "C:\\Users\\Acer\\Documents\\GitHub\\prmisProjekat\\projekat\\Server\\Server.cs",
               "RelativeToolTip": "Server\\Server.cs",
-              "ViewState": "AQIAANMAAAAAAAAAAAAgwEkBAABaAAAA",
+              "ViewState": "AQIAACsAAAAAAAAAAAAgwD8AAABGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-08T13:22:53.613Z",
               "EditorCaption": ""

@@ -22,5 +22,6 @@ namespace Biblioteka
         public List<Gost> Gosti { get; set; } = new List<Gost>();
         public int BrojNocenja {  get; set; }
         public int Troskovi {  get; set; }
+        public string RacunCeo { get; set; }
     }
 }

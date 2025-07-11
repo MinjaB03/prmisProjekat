@@ -20,7 +20,8 @@ namespace Biblioteka
                 Alarm = Alarm.NORMALNO,
                 Gosti = new List<Gost>(),
                 BrojNocenja = 0,
-                Troskovi = 400
+                Troskovi = 400,
+                RacunCeo = "-------------------\n"
             };
             apartmani.Add(a1);
 
@@ -34,7 +35,8 @@ namespace Biblioteka
                 Alarm = Alarm.NORMALNO,
                 Gosti = new List<Gost>(),
                 BrojNocenja = 0,
-                Troskovi = 350
+                Troskovi = 350,
+                RacunCeo = "-------------------\n"
             };
             apartmani.Add(a2);
 
@@ -48,7 +50,8 @@ namespace Biblioteka
                 Alarm = Alarm.NORMALNO,
                 Gosti = new List<Gost>(),
                 BrojNocenja = 0,
-                Troskovi = 300
+                Troskovi = 300,
+                RacunCeo = "-------------------\n"
             };
             apartmani.Add(a3);
 
@@ -62,8 +65,8 @@ namespace Biblioteka
                 Alarm = Alarm.NORMALNO,
                 Gosti = new List<Gost>(),
                 BrojNocenja = 0,
-                Troskovi = 350
-
+                Troskovi = 350,
+                RacunCeo = "-------------------\n"
             };
             apartmani.Add(a4);
 
@@ -77,7 +80,8 @@ namespace Biblioteka
                 Alarm = Alarm.NORMALNO,
                 Gosti = new List<Gost>(),
                 BrojNocenja = 0,
-                Troskovi = 200
+                Troskovi = 200,
+                RacunCeo = "-------------------\n"
             };
             apartmani.Add(a5);
 
