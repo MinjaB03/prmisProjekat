@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using Biblioteka;
+using System.Globalization;
 
 
 namespace Server
@@ -41,10 +42,16 @@ namespace Server
             List<int> minibarZadaci = new List<int>();
             DateTime poslednjiUpdate = DateTime.Now;
             TimeSpan interval = TimeSpan.FromSeconds(40);
-            
+
+            Console.WriteLine("Unesite koiko sekundi zelite da traje dan: ");
+            string vreme = Console.ReadLine();
+            int vremei = int.Parse(vreme);
+            interval = TimeSpan.FromSeconds(vremei);
+
             while (true)
             {
                 byte[] prijemniBafer = new byte[1024];
+                
                 if (DateTime.Now - poslednjiUpdate > interval)
                 {
                     poslednjiUpdate = DateTime.Now;
@@ -58,12 +65,6 @@ namespace Server
 
                             if (ap.BrojNocenja == 0)
                             {
-                                ap.Stanje = Stanje.PRAZAN;
-                                ap.Gosti.Clear();
-                                ap.TrenutniBrGostiju = 0;
-                                ap.RacunCeo = "-------------------\n";
-                                if (!ciscenjeZadaci.Contains(ap.BrojAp))
-                                    ciscenjeZadaci.Add(ap.BrojAp);
                                 // Slanje poruke gostu sa računom
                                 if (apartmaniPoKlijentu.ContainsValue(ap.BrojAp))
                                 {
@@ -73,6 +74,12 @@ namespace Server
                                     serverSocketUDP.SendTo(racunBytes, klijentEP);
                                 }
 
+                                ap.Stanje = Stanje.PRAZAN;
+                                ap.Gosti.Clear();
+                                ap.TrenutniBrGostiju = 0;
+                                ap.RacunCeo = "-------------------\n";
+                                if (!ciscenjeZadaci.Contains(ap.BrojAp))
+                                    ciscenjeZadaci.Add(ap.BrojAp);
 
                                 Console.WriteLine($"Apartman {ap.BrojAp} je sada slobodan i dodat je zadatak čišćenja.");
                             }
@@ -257,6 +264,7 @@ namespace Server
                                     Console.WriteLine($"Postavljen broj noćenja {brojNocenja} za apartman {brojAp}.");
 
                                     string potvrda = "Broj noćenja je evidentiran.";
+                                    poslednjiUpdate = DateTime.Now;
                                     byte[] binarnaPotvrda = Encoding.UTF8.GetBytes(potvrda);
                                     serverSocketUDP.SendTo(binarnaPotvrda, posiljaocEP);
                                 }
@@ -384,15 +392,6 @@ namespace Server
                                     Console.WriteLine($"Zadatak '{tipZadatka}' za apartman {brojAp} je izvršen.");
                                     klijent.Send(Encoding.UTF8.GetBytes("Zadatak izvršen."));
                                 }
-                            }
-
-                            if (porukaTCP.Trim().ToLower() == "kraj")
-                            {
-                                Console.WriteLine("Server zavrsava sa radom");
-                                serverSocketUDP.Close();
-                                serverSocketTCP.Close();
-                                Console.ReadKey();
-                                Environment.Exit(0);
                             }
                         }
                         catch (SocketException ex)
